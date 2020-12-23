@@ -27,7 +27,7 @@ if (empty($_SESSION['nama'])) {
 <body>
     <div class="container mt-5">
         <a href="transaksi_aksi.php?xaksi=sesi">
-            <button type="button" class="btn btn-danger btn-sm">Hapus Session POS</button>
+            <!-- <button type="button" class="btn btn-danger btn-sm">Hapus Session POS</button> -->
         </a>
     </div><br> <br>
     <div class="container">
