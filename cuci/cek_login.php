@@ -19,6 +19,7 @@ if ($cek > 0) {
 
 	$data = mysqli_fetch_assoc($login);
 
+	$_SESSION['idpelanggan'] = $data['id_pelanggan'];
 	$_SESSION['nama'] = $data['nama_pelanggan'];
 	$_SESSION['username'] = $data['username'];
 	$_SESSION['password'] = $data['password'];

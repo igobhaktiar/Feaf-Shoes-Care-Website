@@ -45,8 +45,10 @@ session_start();
             <?php
             $id = $_GET['id'];
             $sql = mysqli_query($konek, "SELECT * FROM tb_transaksi t INNER JOIN tb_pelanggan p ON t.id_pelanggan=p.id_pelanggan INNER JOIN tb_ongkir o ON t.id_ongkir=o.id_ongkir WHERE t.id_transaksi='$id' ");
+            
             $d = mysqli_fetch_assoc($sql);
             ?>
+
             <div class="col">
                 <b>No Pesanan : <?= $d['id_transaksi']; ?></b> <br>
                 Tanggal Pemesanan : <?= $d['tanggal_transaksi']; ?> <br>
