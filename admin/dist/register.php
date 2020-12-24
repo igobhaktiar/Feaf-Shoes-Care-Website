@@ -1,3 +1,7 @@
+<?php
+include "koneksi.php"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,33 +20,44 @@
                 <main>
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-lg-5">
+                            <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
                                     <div class="card-body">
                                         <form>
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                                <input class="form-control py-4" id="inputEmailAddress" type="email" placeholder="Enter email address" />
+                                                <label class="small mb-1" for="namas">Nama</label>
+                                                <input class="form-control py-4" id="namas" type="text" placeholder="Masukkan nama anda" />
                                             </div>
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputPassword">Password</label>
-                                                <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" />
+                                                <label class="small mb-1" for="username">Username</label>
+                                                <input class="form-control py-4" id="username" type="text" aria-describedby="emailHelp" placeholder="Masukkan username" />
                                             </div>
                                             <div class="form-group">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
-                                                    <label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
-                                                </div>
+                                                <label class="small mb-1" for="password">Password</label>
+                                                <input class="form-control py-4" id="password" type="password" placeholder="Masukkam password" />
                                             </div>
-                                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="password.html">Forgot Password?</a>
-                                                <a class="btn btn-primary" href="index.html">Login</a>
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="alamat">Alamat</label>
+                                                <input class="form-control py-4" id="alamat" type="text" aria-describedby="emailHelp" placeholder="Masukkan Alamat" />
                                             </div>
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="alamat">Jenis Kelamin</label>
+                                            </div>
+                                            <select class="form-control" name="xid_barang[]" id="id_barang" required>
+                                                <option value="">Pilih Jenis Kelamin</option>
+                                                <?php
+                                                $sql = mysqli_query($konek, "select * from tb_petugas");
+                                                while ($d = mysqli_fetch_assoc($sql)) {
+                                                ?>
+                                                    <option value="<?= $d['id_petugas']; ?>"><?= $d['jenis_kelamin']; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                            <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" href="login.php">Create Account</a></div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="login.php">Have an account? Go to login</a></div>
                                     </div>
                                 </div>
                             </div>

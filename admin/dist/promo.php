@@ -1,4 +1,12 @@
-    <!DOCTYPE html>
+<?php
+session_start();
+if ($_SESSION['status'] != "Login") {
+    # code...
+    header("location:login.php?pesan=belum_login");
+  }
+  include "koneksi.php"
+?>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -6,47 +14,71 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Static Navigation - SB Admin</title>
+        <title>Tables - SB Admin</title>
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
-
-    <?php include "./navbar.php" ?>
-
+      <?php include "navbar.php"?>
+      
             <div id="layoutSidenav_content">
-            <main>
+                <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Transaksi</h1>
+                        <h1 class="mt-4">Tables</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Transaksi</li>
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Promo</li>
                         </ol>
-                        <div class="card mb-4">
-                        </div>
+                        <!-- table -->
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
-                                Tabel Transaksi   
+                                Tabel Promo
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
+                                  <?php
+                                   $query = $konek->query("SELECT * FROM `tb_promo`");
+                                  ?>
+                                  
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>Tanggal Transaksi</th>
-                                                <th>Pengantaran</th>
-                                                <th>Penjemputan</th>
-                                                <th>Total</th>
-                                                <th>Bukti Bayar</th>
-                                                <th>Status</th>
-                                                <th>Keterangan</th>
+                                                <th>No</th>
+                                                <th hidden>ID Promo</th>
+                                                <th>Nama Promo</th>
+                                                <th>Diskon</th>
                                             </tr>
                                         </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Office</th>
+                                                <th>Age</th>
+                                                <th>Start date</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                             <?php
+
+                                                $no = 1;
+                                                while ($data = mysqli_fetch_assoc($query)) {
+                                            ?>
+                                            <tr>
+                                                <td><?=$no++; ?></td>
+                                                <td hidden><?=$data['id_promo'];?></td>
+                                                <td><?= $data['nama_promo'];?></td>
+                                                <td><?= $data['diskon']; ?></td>
+                                            </tr>
+                                            <?php } ?>
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
+                        <!-- end of table -->
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">

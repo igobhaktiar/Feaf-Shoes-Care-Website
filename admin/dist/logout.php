@@ -7,4 +7,4 @@ session_destroy();
 // unset($_SESSION['password']);
 // unset($_SESSION['pos']);
 
-header('location:index.php');
+header('location:login.php');

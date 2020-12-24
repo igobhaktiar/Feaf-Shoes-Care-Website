@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SESSION['status'] != "Login") {
+    # code...
+    header("location:login.php?pesan=belum_login");
+  }
+  include "koneksi.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,9 +33,9 @@
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Primary Card</div>
+                                    <div class="card-body">Transaksi</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="transaksi.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -60,38 +68,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table mr-1"></i>
-                                DataTable Example
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                            </tr>
-                                        </tfoot>
-                                     </table>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- transaksi -->
+                        <?php include "table_transkasi.php" ?>
+                        <!-- end oftransaksi -->
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">

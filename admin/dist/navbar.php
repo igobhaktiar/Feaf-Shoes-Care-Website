@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="index.php">Start Bootstrap</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
@@ -18,7 +19,7 @@
                         <a class="dropdown-item" href="#">Settings</a>
                         <a class="dropdown-item" href="#">Activity Log</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="login.php">Logout</a>
+                        <a class="dropdown-item" href="logout.php">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -41,8 +42,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.php">Static Navigation</a>
-                                    <a class="nav-link" href="layout-sidenav-light.php">Light Sidenav</a>
+                                    <a class="nav-link" href="transaksi.php">Transaksi</a>
+                                    <a class="nav-link" href="promo.php">Promo</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -58,7 +59,6 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.php">Login</a>
                                             <a class="nav-link" href="register.php">Register</a>
                                             <a class="nav-link" href="password.php">Forgot Password</a>
                                         </nav>
@@ -80,7 +80,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <?php echo $_SESSION['username'] ?>
                     </div>
                 </nav>
             </div>
