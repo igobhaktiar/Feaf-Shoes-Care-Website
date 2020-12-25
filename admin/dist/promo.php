@@ -25,11 +25,16 @@ if ($_SESSION['status'] != "Login") {
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Tables</h1>
+                        <h1 class="mt-4">Promo</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
                             <li class="breadcrumb-item active">Promo</li>
                         </ol>
+                        <div class="col-md-2">  
+                            <div class="form-group mt-4 mb-0">
+                                <a class="btn btn-primary btn-block" href="tambah_promo.php">Tambah Promo</a>
+                            </div>
+                        </div>
                         <!-- table -->
                         <div class="card mb-4">
                             <div class="card-header">
@@ -53,11 +58,6 @@ if ($_SESSION['status'] != "Login") {
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
@@ -71,6 +71,10 @@ if ($_SESSION['status'] != "Login") {
                                                 <td hidden><?=$data['id_promo'];?></td>
                                                 <td><?= $data['nama_promo'];?></td>
                                                 <td><?= $data['diskon']; ?></td>
+                                                <td>
+                                                    <a href="edit_promo.php?&id=<?= $data['id_promo'] ?>" class="editbtn border-0 btn-transition btn btn-outline-warning" type="button"> <i class="fa fa-edit"></i> </a> 
+                                                    <a href="hapus_promo.php?&id=<?= $data['id_promo'] ?>" class="deletebtn border-0 btn-transition btn btn-outline-danger" type="button"> <i class="fa fa-trash"></i> </a> 
+                                                </td>   
                                             </tr>
                                             <?php } ?>
                                         </tbody>

@@ -1,9 +1,4 @@
 <?php 
-	session_start();
-	if (isset($_SESSION['username'])) {
-		# code...
-		header("location:navbar.php?page=login.php");
-	}
  ?>
 <!DOCTYPE html>
 <html lang="en">

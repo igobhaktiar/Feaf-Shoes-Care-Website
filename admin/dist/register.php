@@ -24,36 +24,41 @@ include "koneksi.php"
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
                                     <div class="card-body">
-                                        <form>
+                                        <form action="register_process.php" method="POST">
                                             <div class="form-group">
-                                                <label class="small mb-1" for="namas">Nama</label>
-                                                <input class="form-control py-4" id="namas" type="text" placeholder="Masukkan nama anda" />
+                                                <label class="small mb-1" for="nama">Nama</label>
+                                                <input class="form-control py-4" name="nama" type="text" placeholder="Masukkan nama anda" />
                                             </div>
                                             <div class="form-group">
                                                 <label class="small mb-1" for="username">Username</label>
-                                                <input class="form-control py-4" id="username" type="text" aria-describedby="emailHelp" placeholder="Masukkan username" />
+                                                <input class="form-control py-4" name="username" type="text" aria-describedby="emailHelp" placeholder="Masukkan username" />
                                             </div>
                                             <div class="form-group">
                                                 <label class="small mb-1" for="password">Password</label>
-                                                <input class="form-control py-4" id="password" type="password" placeholder="Masukkam password" />
+                                                <input class="form-control py-4" name="password" type="password" placeholder="Masukkam password" />
                                             </div>
                                             <div class="form-group">
                                                 <label class="small mb-1" for="alamat">Alamat</label>
-                                                <input class="form-control py-4" id="alamat" type="text" aria-describedby="emailHelp" placeholder="Masukkan Alamat" />
+                                                <input class="form-control py-4" name="alamat" type="text" aria-describedby="emailHelp" placeholder="Masukkan Alamat" />
                                             </div>
                                             <div class="form-group">
-                                                <label class="small mb-1" for="alamat">Jenis Kelamin</label>
+                                                <label class="small mb-1" for="jek">Jenis Kelamin</label>
                                             </div>
-                                            <select class="form-control" name="xid_barang[]" id="id_barang" required>
-                                                <option value="">Pilih Jenis Kelamin</option>
-                                                <?php
-                                                $sql = mysqli_query($konek, "select * from tb_petugas");
-                                                while ($d = mysqli_fetch_assoc($sql)) {
-                                                ?>
-                                                    <option value="<?= $d['id_petugas']; ?>"><?= $d['jenis_kelamin']; ?></option>
-                                                <?php } ?>
+                                            <select class="form-control" name="kelamin" name="kelamin" required>
+                                                    <option value="L">Laki-laki</option>
+                                                    <option value="P">Perempuan</option>
                                             </select>
-                                            <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" href="login.php">Create Account</a></div>
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="alamat">Level</label>
+                                            </div>
+                                            <select class="form-control" name="level" name="level" required>
+                                                    <option value="admin">Admin</option>
+                                                    <option value="karyawan">Karyawan</option>
+                                                    <option value="pemilik">Pemilik</option>
+                                            </select>
+                                            <div class="form-group mt-4 mb-0">
+                                                <button type="submit" class="btn btn-primary btn-block" name="submit">Submit</button>
+                                            </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
