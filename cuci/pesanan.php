@@ -65,7 +65,7 @@ session_start();
                                     <a href="transaksi_bayar.php?id=<?= $da['id_transaksi']; ?>" class="btn btn-outline-primary btn-sm">Bayar</a>
                                 <?php } else if ($da['status'] == 'bayar') { ?>
                                     <b>Anda Sudah Bayar</b>
-                                    <a href="rincian_pesanan.php?id=<?= $da['id_transaksi']; ?>" class="btn btn-outline-success btn-sm">Rincian Pesanan</a>
+                                    <a href="dt.php?id=<?= $da['id_transaksi']; ?>" class="btn btn-outline-success btn-sm">Rincian Pesanan</a>
                                 <?php } ?>
                             </td>
                         </tr>
