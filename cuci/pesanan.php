@@ -52,8 +52,9 @@ session_start();
                 </thead>
                 <tbody>
                     <?php
+                    $id_pelanggan = $_SESSION['idpelanggan'];
                     $no = 1;
-                    $sql = mysqli_query($konek, "SELECT * FROM tb_transaksi WHERE id_pelanggan='1' ");
+                    $sql = mysqli_query($konek, "SELECT * FROM tb_transaksi WHERE id_pelanggan='$id_pelanggan' ");
                     while ($da = mysqli_fetch_assoc($sql)) {
                     ?>
                         <tr>

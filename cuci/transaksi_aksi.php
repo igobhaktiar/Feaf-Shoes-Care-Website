@@ -25,7 +25,7 @@ if ($aksi == 'tambah') {
 }
 
 if ($aksi == 'simpan') {
-    $id_pelanggan = 1;
+    $id_pelanggan = $_SESSION['idpelanggan'];
     $id_petugas = 1;
     $id_ongkir = $_SESSION['pos']['xid_ongkir'];
     $id_promo = 1;
