@@ -23,11 +23,6 @@
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
@@ -43,6 +38,10 @@
                                                 <td><?= $data['nama_pelanggan'];?></td>
                                                 <td><?= $data['status']; ?></td>
                                                 <td><?= $data['total']; ?></td>
+                                                <td>                                                
+                                                <a href="bukti_bayar.php?&id=<?= $data['id_pelanggan'] ?>" class="editbtn border-0 btn-transition btn btn-outline-warning" type="button"> <i class="fa fa-edit"></i> </a> 
+                                                </td>
+
                                             </tr>
                                             <?php } ?>
                                         </tbody>

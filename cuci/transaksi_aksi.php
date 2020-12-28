@@ -76,7 +76,7 @@ if ($aksi == 'bayar') {
     $tmpgambar = $_FILES['xgambar']['tmp_name'];
 
     mysqli_query($konek, "UPDATE tb_transaksi SET bukti_bayar='$gambar',status='bayar' WHERE id_transaksi='$id'");
-    copy($tmpgambar, "images/bukti_bayar/$gambar");
+    copy($tmpgambar, "admin/dist/bukti_bayar/$gambar");
     echo "<script>alert('Anda telah melakukan pembayaran');location='pesanan.php'</script>";
 }
 
