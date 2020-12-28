@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SESSION['status'] != "Login") {
+    # code...
+    header("location:login.php?pesan=belum_login");
+  }
+  include "koneksi.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,9 +26,10 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Tambah Promo</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Tambah Promo</li>
                         </ol>
                     </div>
                     <form action="akses_promo.php" method="post">

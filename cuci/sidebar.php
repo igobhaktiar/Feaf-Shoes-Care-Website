@@ -54,7 +54,7 @@ session_start();
                                     <a href="#" style="color: black;">Selamat datang, <b><?php echo $_SESSION['nama'] ?></b></a>
                                 </li>
                                 <li>
-                                    <a href="login/login.php"><img style="margin-right: 15px;" src="icon/1.png" alt="#" /></a>
+                                    <a href="login.php"><img style="margin-right: 15px;" src="icon/1.png" alt="#" /></a>
                                 </li>
                                 <li class="tytyu">
                                     <a href="#"><img style="margin-right: 15px;" src="icon/2.png" alt="#" /></a>
