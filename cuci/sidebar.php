@@ -14,7 +14,7 @@ session_start();
         <li> <a href="about.php">About</a></li>
         <li> <a href="product.php">Treatment</a></li>
         <li> <a href="pesanan.php">Pesanan</a></li>
-        <li> <a href="cekstatus/cekstatus.html">Cek Status</a></li>
+        <li> <a href="cekstatus.php">Cek Status</a></li>
         <li> <a href="contact.php">Contact us</a></li>
         <?php if (empty($_SESSION['nama'])) { ?>
             <li> <a href="login.php">Login</a></li>
