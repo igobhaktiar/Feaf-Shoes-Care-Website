@@ -34,7 +34,7 @@
                   <input class="form-control" placeholder="Address" name="alamat" type="text" required="required">
               </div>
               <div class="form-group">
-                <input type="text" name="username" class="form-control" placeholder="Username .." required="required">
+                <input type="text" name="username" class="form-control" placeholder="Username" required="required">
               </div>
               <div class="form-group">
                   <input class="form-control" name="password" placeholder="Password" type="password" required="required">
@@ -45,7 +45,7 @@
               <div class="form-group">
                   <center> <input type="submit" class="btn btn-block btn-primary" name="submit" value="Register"> </center>
               </div>
-              <p class="text-center">Have an already account?<a href="">Login here</a></p>
+              <p class="text-center">Have an already account?<a href="login.php">Login here</a></p>
           </form>
         </div>
       </div>

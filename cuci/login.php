@@ -47,7 +47,7 @@
             <!-- <a href="">Forgot Password</a> -->
           </form>
           <hr>
-          <p class="bawah">Don't have an account?<a href="">Sing Up Here</a></p>
+          <p class="bawah">Don't have an account?<a href="register.php">Sing Up Here</a></p>
         </div>
       </div>
     </div>

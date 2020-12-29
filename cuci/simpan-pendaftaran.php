@@ -20,8 +20,9 @@ $password=$_POST["password"];
 
 //Kondisi apakah berhasil atau tidak
   if ($hasil) {
-	header("location:login.php");
 	echo "Berhasil simpan data anggota";
+	header("location:login.php");
+	
   }
 else {
 	echo "Gagal simpan data anggota";

@@ -18,7 +18,8 @@ body::after {
 }
 
 .login-form {
-    background: #2924247a;
+    margin-left: 100px;
+    background: #1616167a;
     padding: 100px;
     border-radius: 50px;
     color: white;
