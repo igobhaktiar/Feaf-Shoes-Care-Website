@@ -37,13 +37,14 @@
               <label>Password</label><br>
               <input type="password" name="xpassword" class="form-control" placeholder="Password .." required="required"><br>
             </div>
-            <div class="form-group form-check">
+            <hr>
+            <!-- <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-            </div>
+            </div> -->
             <input type="submit" class="btn btn-primary" value="LOGIN">
-
-            <a href="">Forgot Password</a>
+            <br>
+            <!-- <a href="">Forgot Password</a> -->
           </form>
           <hr>
           <p class="bawah">Don't have an account?<a href="">Sing Up Here</a></p>

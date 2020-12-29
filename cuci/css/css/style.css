@@ -8,6 +8,7 @@ body {
     background-size: 50%;
 } */
 .row {
+    margin-left: 50%;
     background-image: url(login.jpg);
 }
 
@@ -17,6 +18,7 @@ h1 {
 }
 
 .login-form {
+    margin-left: 50%;
     background: #1a11117a;
     padding: 300px;
     color: white;
