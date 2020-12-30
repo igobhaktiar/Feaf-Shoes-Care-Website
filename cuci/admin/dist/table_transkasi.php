@@ -37,7 +37,7 @@
                                                 <td hidden><?=$data['id_pelanggan'];?></td>
                                                 <td><?= $data['nama_pelanggan'];?></td>
                                                 <td><?= $data['status']; ?></td>
-                                                <td><?= $data['total']; ?></td>
+                                                <td>Rp. <?= $data['total']; ?></td>
                                                 <td>                                                
                                                 <a href="bukti_bayar.php?&id=<?= $data['id_pelanggan'] ?>" class="editbtn border-0 btn-transition btn btn-outline-warning" type="button"> <i class="fa fa-edit"></i> </a> 
                                                 </td>
