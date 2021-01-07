@@ -1,5 +1,5 @@
 <?php
-$konek = mysqli_connect("localhost", "root", "", "feaf_shoes_care_id");
+$konek = mysqli_connect("localhost", "root", "", "cucisepatu");
 
 if (mysqli_connect_error()) {
     echo "Koneksi database gagal : " . mysqli_connect_error();

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <head>
 <title>Cek Status</title>
@@ -78,8 +81,9 @@
 $koneksi = new mysqli('localhost','root','','cucisepatu');
 if (isset($_POST['Search'])){
     //variable
+    $id = $_SESSION['idpelanggan'];
     $keyword = $_POST['keyword'];
-    $query = $koneksi->query("SELECT id_transaksi, status, keterangan FROM tb_transaksi WHERE id_transaksi LIKE '%$keyword%' OR status LIKE '%$keyword%' OR keterangan LIKE'%$keyword%'");
+    $query = $koneksi->query("SELECT id_transaksi, status, keterangan FROM tb_transaksi WHERE id_transaksi = '$keyword' AND id_pelanggan='$id'");
     $row = mysqli_num_rows($query);
     //cek apakah ada satu  
     if ($row==0){

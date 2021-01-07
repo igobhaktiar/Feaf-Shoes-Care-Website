@@ -57,7 +57,7 @@ session_start();
                                 <div class="text-bg">
                                     <h1>FEAF <br> <strong class="black_bold">Shoes Care</strong><br></h1>
                                     <h2>Membersihkan seluruh bagian sepatu anda hingga tanpa noda !</h2>
-                                    <a href="transaksi/transaksi.php">Cuci Kuy ! <i class='fa fa-angle-right'></i></a>
+                                    <a href="transaksi.php">Cuci Kuy ! <i class='fa fa-angle-right'></i></a>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
