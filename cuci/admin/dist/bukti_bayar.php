@@ -33,18 +33,93 @@ if ($_SESSION['status'] != "Login") {
                         </ol>
                     </div>
                     
+                    <table class="table table-striped">
+                        <h1 align=center >Detail Transaksi</h1>
+                        <?php
+            $id = $_GET['id'];
+            $sql = mysqli_query($konek, "SELECT * FROM tb_transaksi t INNER JOIN tb_pelanggan p ON t.id_pelanggan=p.id_pelanggan INNER JOIN tb_ongkir o ON t.id_ongkir=o.id_ongkir INNER JOIN tb_promo a ON t.id_promo=a.id_promo WHERE t.id_transaksi='$id' ");
+            $d = mysqli_fetch_assoc($sql);
+            ?>
+            <tr>
+                <td>No Pesanan</td>
+                <td>:</td>
+                <td><?= $d['id_transaksi']; ?></td>
+            </tr>
+            <tr>
+                <td>Promo</td>
+                <td>:</td>
+                <td><?= $d['nama_promo']; ?></td>
+            </tr>
+            <tr>
+                <td>Tanggal Pemesanan</td>
+                <td>:</td>
+                <td> <?= $d['tanggal_transaksi']; ?></td>
+            </tr>
+            <tr>
+                <td>Nama Pelanggan</td>
+                <td>:</td>
+                <td> <?= $d['nama_pelanggan']; ?> </td>
+            </tr>
+            <tr>
+                <td>Pengantaran</td>
+                <td>:</td>
+                <td><?= $d['pengantaran']; ?></td>
+            </tr>
+            <tr>
+                <td>Penjemputan</td>
+                <td>:</td>
+                <td><?= $d['penjemputan']; ?></td>
+            </tr>
+             <tr>
+                <td>Tarif ongkir</td>
+                <td>:</td>
+                <td>Rp <?= number_format($d['harga_ongkir']); ?></td>
+            </tr>
+            <tr>
+                <td><img src="images/bukti_bayar/<?= $d['bukti_bayar']; ?>" class="img-fluid mb-3"></td>
+                </tr>
+            
+
+        <div class="row mt-1">
+            <table class="table table-bordered">
+                <thead>
+                    <th>No</th>
+                    <th>Nama Barang</th>
+                    <th>Treatment</th>
+                    <th>Harga Treatment</th>
+                    <th>Jumlah</th>
+                    <th>subtotal</th>
+                </thead>
+                <tbody>
                     <?php
-                    include "koneksi.php";
                     $id = $_GET['id'];
-                    $query_mysql = mysqli_query($konek,"SELECT t.id_pelanggan,p.nama_pelanggan,t.status,t.total,t.bukti_bayar FROM tb_transaksi t INNER JOIN tb_pelanggan p ON t.id_pelanggan=p.id_pelanggan '$id'");
-                    $nomor = 1;
-                    while ($data = mysqli_fetch_array($query_mysql)) {
+                    $no = 1;
+                    $sqli = mysqli_query($konek, "SELECT * FROM tb_detail_transaksi d INNER JOIN tb_barang b ON d.id_barang=b.id_barang INNER JOIN tb_treatment r ON d.id_treatment=r.id_treatment WHERE d.id_transaksi='$id'");
+                    while ($da = mysqli_fetch_assoc($sqli)) {
+                        $subtotal = $subtotal + $da['subtotal'];
                     ?>
+
+                        <tr>
+                            <td><?= $no ?></td>
+                            <td><?= $da['nama_barang'] ?></td>
+                            <td><?= $da['nama_treatment'] ?></td>
+                            <td>Rp <?= number_format($da['harga_treatment']) ?></td>
+                            <td><?= $da['jumlah'] ?></td>
+                            <td>Rp <?= number_format($da['subtotal']) ?></td>
+                        </tr>
+                    <?php $no++;
+                    } ?>
+                </tbody>
+                <tfoot>
                     <tr>
-                        <td><?="<img src='bukti_bayar/".$data['bukti_bayar']."style='width:200px; height:200px;'>"?></td>
+                        <?php
+                        $grandtotal = $subtotal + $d['harga_ongkir']
+                        ?>
+                        <td colspan="5" align="right">Grand Total : </td>
+                        <td><b>Rp <?= number_format($grandtotal) ?></b></td>
                     </tr>
-                    
-                    <?php } ?>  
+                </tfoot>
+            </table>  
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
